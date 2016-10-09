@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crowdfunder</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="pk-container">
+      <header class="pk-header">
+        <h1 class="pk-title">crowdFunder</h1>
+      </header>
+
+    <div class="pk-title-nav">
+    <%= link_to ' Home ', root_path %>
+    <%= link_to " Create Project ", new_project_path %>
+    <% if logged_in? %>
+      <%= link_to ' Logout ', session_path('current'), method: :delete %>
+
+    <% else %>
+      <%= link_to ' Login ', new_session_path%>
+      <%= link_to ' Signup ', new_user_path%>
+    <% end %>
+
+    <% if flash[:alert] %>
+    <%= flash[:alert] %>
+    <% end %>
+    </div>
+
+
+
+    <main class="pk-main">
+      <section class="pk-description">
+        <p><%= yield %></p>
+      </section>
+    </main>
+
+
+    <footer class='pk-footer'>
+      Copyright 2016
+    </footer>
+  </div>
+  </body>
+</html>

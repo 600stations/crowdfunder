@@ -1,0 +1,15 @@
+<h1>Crowdfunder</h1>
+
+
+<div id="robot-container" class="robot-box">
+  <% @projects.each do |project| %>
+
+  <li class="robot"><%= link_to project.title, project_path(project) %></li>
+
+  <% end %>
+ </div>
+
+<aside id="robot-details-container" class="robot-box">
+  <h2>Project Details</h2>
+  <div id="robot-details"></div>
+</aside>

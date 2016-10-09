@@ -1,0 +1,13 @@
+<div class="pledges">
+  <h3 style="color:firebrick"> Pledges for <%= @project.title %>:</h3>
+    <% @project.pledges.order("created_at asc").each do |reserv| %>
+        <% if reserv.user != nil %>
+          <strong>Pledge Name: </strong><%=reserv.user.email %><br />
+        <% end %>
+
+      <strong>Amount: </strong>  $<%= reserv.amount %>.00<br />
+
+
+<br /><br />
+    <% end %>
+</div>

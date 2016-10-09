@@ -1,0 +1,16 @@
+<h1>Project</h1>
+
+<p>Welcome! You are authorized for entry.</p>
+
+<div>
+<h2>Title: <%= @project[:title] %></h2>
+<p>Description: <%= @project[:description] %></p>
+
+<p>Deadline: <%= @project[:deadline] %></p>
+<p>Goal: $<%= @project[:goal] %>.00</p>
+<p><button><%= link_to "Make a Pledge", new_project_pledge_path(@project) %></button></p><br />
+</div>
+
+
+
+<%=render 'pledges/pledge' %>
